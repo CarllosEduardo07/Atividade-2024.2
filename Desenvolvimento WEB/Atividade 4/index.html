@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora Simples</title>
+  </head>
+  <body>
+    <div>
+      <input type="text" id="resultado" />
+      <br />
+      <input type="number" id="numero1" placeholder="digite o valor 1" />
+      <br />
+      <input type="number" id="numero2" placeholder="digite o valor 2" />
+      <br />
+      <button onclick="soma()">+</button>
+      <button onclick="subtrair()">-</button>
+      <button onclick="multiplicar()">*</button>
+      <button onclick="dividir()">/</button>
+      <button onclick="limpar()">C</button>
+    </div>
+
+    <script>
+      const number1 = document.querySelector('#numero1');
+      const number2 = document.querySelector('#numero2');
+
+      function soma() {
+        const resultado = parseFloat(number1.value) + parseFloat(number2.value);
+        console.log(resultado);
+        document.querySelector('#resultado').value = resultado;
+      }
+      function subtrair() {
+        const resultado = parseFloat(number1.value) - parseFloat(number2.value);
+        console.log(resultado);
+        document.querySelector('#resultado').value = resultado;
+      }
+      function multiplicar() {
+        const resultado = parseFloat(number1.value) * parseFloat(number2.value);
+        console.log(resultado);
+        document.querySelector('#resultado').value = resultado;
+      }
+      function dividir() {
+        const resultado = parseFloat(number1.value) / parseFloat(number2.value);
+        console.log(resultado);
+        document.querySelector('#resultado').value = resultado;
+      }
+      function limpar() {
+        number1.value = '';
+        number2.value = '';
+        resultado.value = '';
+      }
+    </script>
+  </body>
+</html>
