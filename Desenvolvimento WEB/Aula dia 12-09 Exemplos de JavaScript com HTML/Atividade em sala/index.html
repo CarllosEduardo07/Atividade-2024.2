@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora Simples</title>
+  </head>
+  <body>
+    <div>
+      <input type="text" id="resultado" />
+      <br />
+      <input type="number" id="numero1" placeholder="digite o valor 1" />
+      <br />
+      <input type="number" id="numero2" placeholder="digite o valor 2" />
+      <br />
+      <button onclick="soma()">+</button>
+      <button onclick="subtrair()">-</button>
+      <button onclick="multiplicar()">*</button>
+      <button onclick="dividir()">/</button>
+      <button onclick="limpar()">C</button>
+    </div>
+
+    <script>
+      const number1 = document.querySelector('#numero1');
+      const number2 = document.querySelector('#numero2').value;
+
+      function soma() {
+        console.log(parseInt(number1.value) + parseInt(number2.value));
+        
+        const resultado = parseFloat(number1) + parseFloat(number2);
+        console.log(resultado);
+        document.querySelector('#resultado').textContent = resultado;
+      }
+      function subtrair() {
+        const resultado = Number(number1) - Number(number2);
+        console.log(resultado);
+        document.querySelector('#resultado').innerHTML = `${resultado}`;
+      }
+    </script>
+  </body>
+</html>
