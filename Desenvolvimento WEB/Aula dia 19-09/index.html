@@ -9,16 +9,19 @@
   </head>
   <body>
     <div class="container-principal">
-      <div class="display"></div>
+      <div class="container-display">
+        <div class="mostraOperacao"></div>
+        <div class="display"></div>
+      </div>
 
       <!-- buttons -->
       <table>
         <tr>
           <td>
-            <button class="btn">C</button>
+            <button class="btn-clear">C</button>
           </td>
           <td>
-            <button class="btn"><=</button>
+            <button class="btn-delete"><=</button>
           </td>
           <td>
             <button class="operacao">%</button>
@@ -71,10 +74,10 @@
         </tr>
         <tr>
           <td colspan="2">
-            <button class="btn-zero">0</button>
+            <button  class="btn" id="btn-zero">0</button>
           </td>
           <td>
-            <button class="btn">.</button>
+            <button class="btn-add-ponto-decimal">.</button>
           </td>
           <td>
             <button class="operacao">=</button>

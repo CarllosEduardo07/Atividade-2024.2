@@ -11,12 +11,31 @@
   border-radius: 5px;
   padding: 5px;
 }
+.container-display{
+  display: flex; 
+  flex-direction: column;
+}
 
 .display {
   width: auto;
-  height: 80px;
+  height: 40px;
   background-color: black;
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 2rem;
+  padding-right: 10px;
+}
+
+.mostraOperacao {
+  width: auto;
+  height: 30px;
+  color: white;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 table {
@@ -37,9 +56,9 @@ button {
   font-weight: 600;
   cursor: pointer;
 }
-button:hover{
+button:hover {
   background-color: darkgray;
 }
-.btn-zero {
+#btn-zero {
   padding: 10px 52px;
 }
