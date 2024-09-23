@@ -1,5 +1,5 @@
 const display = document.querySelector('.display');
-let operacaoSendoFeita = document.querySelector('.mostraOperacao');
+let resultadoDaOperacao = document.querySelector('.mostraOperacaoSendoFeita');
 
 let valorAtual = '';
 let valorAnterior = '';
@@ -18,6 +18,7 @@ function limpar() {
   valorAtual = '';
   valorAnterior = '';
   operacao = null;
+  resultadoDaOperacao.innerHTML = '';
   atualizarDisplay('');
 }
 
@@ -40,11 +41,6 @@ function calcular() {
   let resultado;
   const numeroAnterior = parseFloat(valorAnterior);
   const numeroAtual = parseFloat(valorAtual);
-
-  function mostraOperacaoFeita() {
-    operacaoSendoFeita.textContent =+ numeroAnterior, operacao, numeroAtual;
-    console.log(numeroAnterior, operacao, numeroAtual);
-  }
 
   if (isNaN(numeroAnterior) || isNaN(numeroAtual)) return;
 
@@ -69,7 +65,9 @@ function calcular() {
     default:
       return;
   }
-  mostraOperacaoFeita();
+
+  resultadoDaOperacao.innerHTML = `${numeroAnterior} ${operacao} ${numeroAtual}`;
+
   valorAtual = resultado.toString();
   operacao = null;
   valorAnterior = '';
@@ -101,7 +99,9 @@ document.querySelectorAll('.operacao').forEach(botao => {
 });
 
 // Eventos de limpeza e apagar
-document.querySelector('.btn-clear').addEventListener('click', limpar);
+document.querySelector('.btn-clear').addEventListener('click', () => {
+  limpar();
+});
 document.querySelector('.btn-delete').addEventListener('click', apagarUltimoNumero);
 
 // Evento para adicionar ponto decimal
