@@ -7,6 +7,7 @@ public class Credito extends FormaPagamento {
 
     @Override
     void cartaoDebito() {
-        System.out.println("teste de debito");
     }
+    @Override
+    void dinheiro(){}
 }
